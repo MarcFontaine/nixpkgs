@@ -17,17 +17,17 @@ let
     else
       throw "unsupported architecture";
 
-  version = "3.07.1";
+  version = "3.15.1";
 
   srcs = rec {
     aarch64 = {
       url = "https://www.sdrplay.com/software/SDRplay_RSP_API-ARM64-${version}.run";
-      hash = "sha256-GJPFW6W8Ke4mnczcSLFYfioOMGCfFn2/EIA07VnmVGY=";
+      hash = "sha256-GlPFW6W8Kf4mnczcSLFYfioOMGCfFn2/EIA07VnmVGY=";
     };
 
     x86_64 = {
       url = "https://www.sdrplay.com/software/SDRplay_RSP_API-Linux-${version}.run";
-      sha256 = "1a25c7rsdkcjxr7ffvx2lwj7fxdbslg9qhr8ghaq1r53rcrqgzmf";
+      sha256 = "sha256-CTcyv10Xz9G2LqHh4qOW9tKBEcB+rztE2R7xJIU4QBQ=";
     };
 
     i686 = x86_64;
@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
     ln -s "$out/lib/$libName.so.$majorVersion" "$out/lib/$libName.so"
     cp "${arch}/sdrplay_apiService" $out/bin/
     cp -r inc/* $out/include/
-    cp 66-mirics.rules $out/lib/udev/rules.d/
+#    cp 66-mirics.rules $out/lib/udev/rules.d/
   '';
 
   meta = with lib; {
