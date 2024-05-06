@@ -25,6 +25,7 @@ in
         m17-cxx-demod
         alsa-utils
         netcat
+        soapysdrplay
       ];
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/openwebrx";

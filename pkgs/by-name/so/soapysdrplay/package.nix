@@ -10,13 +10,13 @@
 
 stdenv.mkDerivation rec {
   pname = "soapysdr-sdrplay3";
-  version = "0.4.0";
+  version = "0.8.10";
 
   src = fetchFromGitHub {
-    owner = "pothosware";
+    owner = "luarvique";
     repo = "SoapySDRPlay3";
-    rev = "soapy-sdrplay3-${version}";
-    sha256 = "sha256-WMcAw0uR2o2SrQR4mBtdVEZlJ/ZXRqwo6zMJNsB/5U4=";
+    rev = version;
+    sha256 = "sha256-FIg1YTKPsCUme0DphdP9YSWlwjeV6vP2D3TmeHj+FaY=";
   };
 
   nativeBuildInputs = [

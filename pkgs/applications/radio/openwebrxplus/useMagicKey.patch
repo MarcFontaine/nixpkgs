@@ -1,0 +1,24 @@
+diff --git a/owrx/connection.py b/owrx/connection.py
+index b78a6430..7f425e93 100644
+--- a/owrx/connection.py
++++ b/owrx/connection.py
+@@ -148,6 +148,7 @@ class OpenWebRxReceiverClient(OpenWebRxClient, SdrSourceEventClient):
+         "flight_url",
+         "modes_url",
+         "receiver_gps",
++        "magic_key",
+     ]
+ 
+     def __init__(self, conn):
+@@ -331,11 +332,6 @@ class OpenWebRxReceiverClient(OpenWebRxClient, SdrSourceEventClient):
+                     # If the magic key is set in the settings, only allow
+                     # changes if it matches the received key
+                     if "params" in message and "frequency" in message["params"]:
+-                        if self.stack["allow_center_freq_changes"]:
+-                            params = message["params"]
+-                            magic  = self.stack["magic_key"]
+-                            key    = params["key"] if "key" in params else None
+-                            if magic == "" or key == magic:
+                                 self.sdr.setCenterFreq(params["frequency"])
+                 elif message["type"] == "connectionproperties":
+                     if "params" in message:

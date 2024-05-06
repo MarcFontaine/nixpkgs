@@ -11738,7 +11738,11 @@ self: super: with self; {
 
   pycryptodomex = callPackage ../development/python-modules/pycryptodomex { };
 
-  pycsdr = callPackage ../development/python-modules/pycsdr { };
+  pycsdr = callPackage ../development/python-modules/pycsdr { csdr = pkgs.csdr; };
+
+  pycsdr-lu = callPackage ../development/python-modules/pycsdr-lu { };
+
+  pycsdreti = callPackage ../development/python-modules/pycsdreti { };
 
   pyct = callPackage ../development/python-modules/pyct { };
 

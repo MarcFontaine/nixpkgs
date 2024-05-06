@@ -10155,6 +10155,11 @@ with pkgs;
     buildPythonPackage buildPythonApplication setuptools pycsdr pydigiham;
   };
 
+  openwebrxplus = callPackage ../applications/radio/openwebrxplus {
+    inherit (python3Packages)
+    buildPythonPackage buildPythonApplication setuptools pycsdr-lu pycsdreti pydigiham paho-mqtt;
+  };
+
   pcre = callPackage ../development/libraries/pcre { };
   pcre16 = res.pcre.override { variant = "pcre16"; };
   # pcre32 seems unused
@@ -10516,6 +10521,7 @@ with pkgs;
       soapyremote
       soapyrtlsdr
       soapyuhd
+      soapysdrplay
     ];
   };
 
