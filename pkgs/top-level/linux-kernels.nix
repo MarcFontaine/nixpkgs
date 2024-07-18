@@ -377,6 +377,8 @@ in {
 
     it87 = callPackage ../os-specific/linux/it87 {};
 
+    i2c-ch341-usb = callPackage ../os-specific/linux/i2c-ch341-usb { };
+
     asus-ec-sensors = callPackage ../os-specific/linux/asus-ec-sensors {};
 
     asus-wmi-sensors = callPackage ../os-specific/linux/asus-wmi-sensors {};
