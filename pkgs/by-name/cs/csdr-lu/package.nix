@@ -4,13 +4,13 @@
 
 stdenv.mkDerivation rec {
   pname = "csdr-lu";
-  version = "0.18.23";
+  version = "0.18.24";
 
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "csdr";
-    rev = "0.18.23";
-    hash = "sha256-Q7g1OqfpAP6u78zyHjLP2ASGYKNKCAVv8cgGwytZ+cE=";
+    rev = "be1be3c4827260e9a47729ccc01da59aa4592d67";
+    hash = "sha256-uTkyzPwpsSlhL/gqSHf7Wo4QivkfdAt+wwo45iCwS0I=";
   };
 
   nativeBuildInputs = [

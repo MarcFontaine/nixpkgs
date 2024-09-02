@@ -63,16 +63,14 @@ let
 in
 buildPythonApplication rec {
   pname = "openwebrx";
-  version = "1.2.62";
+  version = "1.2.74";
 
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "openwebrx";
-    rev = "38f2d4a953b4bfce84abcfb2508fabf9c5616cbe";
-    hash = "sha256-A2gkc3t4nswlcp7BK1fHrGHHmbCADJ5voRwyw1HTLTQ=";
+    rev = "dff80120244cf0ed11e35be7aee5ccebc376c25f";
+    hash = "sha256-jfJ5KwUFD6Xf0HJiR/Gps0y0/JBsDv7AoXnMQS7R3H4=";
   };
-
-  patches = [ ./useMagicKey.patch ];
 
   propagatedBuildInputs = [
     setuptools

@@ -15,8 +15,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "luarvique";
     repo = "SoapySDRPlay3";
-    rev = version;
-    sha256 = "sha256-FIg1YTKPsCUme0DphdP9YSWlwjeV6vP2D3TmeHj+FaY=";
+    rev = "cc14358ba0ec46aa6d3570c48a229a0bb29df8d2";
+    sha256 = "sha256-amK0P5sQb/5xNZ/sGXpO6f/RD7SIbQa+LAa08kEAXLg=";
   };
 
   nativeBuildInputs = [
