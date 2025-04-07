@@ -10518,10 +10518,11 @@ with pkgs;
       soapybladerf
       soapyhackrf
       soapyplutosdr
+      soapyradioberry
       soapyremote
       soapyrtlsdr
       soapyuhd
-      soapysdrplay
+#      soapysdrplay
     ];
   };
 
