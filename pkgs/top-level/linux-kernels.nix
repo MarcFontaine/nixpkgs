@@ -467,6 +467,8 @@ in {
 
     r8168 = callPackage ../os-specific/linux/r8168 { };
 
+    radioberry = callPackage ../os-specific/linux/radioberry { };
+
     rtl8188eus-aircrack = callPackage ../os-specific/linux/rtl8188eus-aircrack { };
 
     rtl8192eu = callPackage ../os-specific/linux/rtl8192eu { };
