@@ -13,8 +13,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "pa3gsb";
     repo = "Radioberry-2.x";
-    rev = "master";
-    sha256 = "sha256-kJ8D6EukhDIkbv8qUgO+1uZaBOY3W9+yTKlkljAJ2lU=";
+    rev = "5f99826de20c30b5389b515926fed8ef53a2fdc9";
+    sha256 = "sha256-qVnviHC/x7qgcx5tuW27/FeVmu6TMyqwrvTwnZiJYCo=";
   };
 
   patches = [ ./0001-Disable-hidden-spyware.patch ];
