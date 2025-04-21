@@ -2,7 +2,7 @@
 , pkg-config, cmake, setuptools
 , libsamplerate, fftwFloat
 , rtl-sdr, soapysdr-with-plugins, csdr-lu, csdreti, pycsdr-lu, pycsdreti, pydigiham, direwolf, sox, wsjtx, codecserver
-, paho-mqtt
+
 }:
 
 let
@@ -86,7 +86,6 @@ buildPythonApplication rec {
     sox
     wsjtx
     codecserver
-    paho-mqtt
   ];
 
   pythonImportsCheck = [ "csdr" "owrx" "test" ];
