@@ -11220,6 +11220,7 @@ with pkgs;
       soapyrtlsdr
       soapyuhd
       soapysdrplay
+      soapyradioberry
     ];
   };
 

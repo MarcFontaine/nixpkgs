@@ -10,10 +10,10 @@ stdenv.mkDerivation rec {
   pname = "soapyradioberry";
   version = "0.0.0";
   src = fetchFromGitHub {
-    owner = "pa3gsb";
+    owner = "MarcFontaine";
     repo = "Radioberry-2.x";
-    rev = "999e628ee35a46d57f8d23b81ff132ba285eb061";
-    sha256 = "sha256-sQtsP6MWDcQpmnMC5j3kkC6BqFhu5ZdXtiW1YGDIo7E=";
+    rev = "017efae2b72b3826d05ba8a6a260d8c97ae7f9c9";
+    sha256 = "sha256-2+illSbujeN1MXRpO10YSglN2+TEwPiNQGjXzY9qFyg=";
   };
 
   sourceRoot = "${src.name}/SBC/${rpi}/SoapyRadioberrySDR";
