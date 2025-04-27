@@ -9,35 +9,22 @@
 let
   arch =
     if stdenv.hostPlatform.isx86_64 then
-      "x86_64"
+      "amd64"
     else if stdenv.hostPlatform.isi686 then
       "i686"
     else if stdenv.hostPlatform.isAarch64 then
       "aarch64"
     else
       throw "unsupported architecture";
-
-  version = "3.07.1";
-
-  srcs = rec {
-    aarch64 = {
-      url = "https://www.sdrplay.com/software/SDRplay_RSP_API-ARM64-${version}.run";
-      hash = "sha256-GJPFW6W8Ke4mnczcSLFYfioOMGCfFn2/EIA07VnmVGY=";
-    };
-
-    x86_64 = {
-      url = "https://www.sdrplay.com/software/SDRplay_RSP_API-Linux-${version}.run";
-      sha256 = "1a25c7rsdkcjxr7ffvx2lwj7fxdbslg9qhr8ghaq1r53rcrqgzmf";
-    };
-
-    i686 = x86_64;
-  };
 in
 stdenv.mkDerivation rec {
   pname = "sdrplay";
-  inherit version;
+  version = "3.15.2";
 
-  src = fetchurl srcs."${arch}";
+  src = fetchurl {
+    url = "https://www.sdrplay.com/software/SDRplay_RSP_API-Linux-${version}.run";
+    sha256 = "sha256-OpfKdkJju+dvsPIiDmQIlCNX6IZMGeFAim1ph684L+M=";
+  };
 
   nativeBuildInputs = [ autoPatchelfHook ];
 
@@ -56,7 +43,7 @@ stdenv.mkDerivation rec {
   dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/{bin,lib,include,lib/udev/rules.d}
+    mkdir -p $out/{bin,lib,include}
     majorVersion="${lib.concatStringsSep "." (lib.take 1 (builtins.splitVersion version))}"
     majorMinorVersion="${lib.concatStringsSep "." (lib.take 2 (builtins.splitVersion version))}"
     libName="libsdrplay_api"
@@ -65,7 +52,6 @@ stdenv.mkDerivation rec {
     ln -s "$out/lib/$libName.so.$majorVersion" "$out/lib/$libName.so"
     cp "${arch}/sdrplay_apiService" $out/bin/
     cp -r inc/* $out/include/
-    cp 66-mirics.rules $out/lib/udev/rules.d/
   '';
 
   meta = with lib; {
